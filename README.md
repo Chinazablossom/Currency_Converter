@@ -49,4 +49,4 @@ The Currency Converter app uses the following libraries and dependencies:
 
 - Minimum SDK Requirement --- API 24 Android 7.0 (Nougat)
 
-- Target SDK Requirement –-- API 33 Android 13 (Tiramisu)
+- Target SDK Requirement –-- API 34 Android API 34
