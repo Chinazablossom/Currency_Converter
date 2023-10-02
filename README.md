@@ -31,10 +31,10 @@ To use the Currency Converter app, follow these steps:
 
 
 # Screenshots
-![2023-10-02 13-12-18 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/3239887d-cc9d-4d41-ba70-3ce68483f5ca)
-![2023-10-02 13-12-40 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/f8ec9661-6e9e-435a-8179-69fa7d93c938)
-![2023-10-02 13-12-56 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/411a97e0-0dc3-40fc-8ea0-f9663777cb22)
-![2023-10-02 13-13-02 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/8fc8ebe7-b1e2-415c-ace2-048632a3bb70)
+![2023-10-02 13-12-18 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/72eb10bd-7654-48ae-aa4b-01c22145eb11)
+![2023-10-02 13-12-40 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/2f395a2b-3c63-4437-b787-ed662f90d797)
+![2023-10-02 13-12-56 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/b5c9c6d5-78d8-42c4-bc37-a2a7b0e7d496)
+![2023-10-02 13-13-02 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/f5a8a6ea-8c29-4c91-bee2-02a3de302ef1)
 
 
 # Libraries and Dependencies
