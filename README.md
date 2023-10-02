@@ -1,11 +1,12 @@
 # Currency_Converter
+### KodeCamp
 
 ## Overview
 The Currency Converter app is a simple Android application that allows users to convert currency from one denomination to another. 
 
 
 # Features
-- Currency conversion between various currencies including USD, GBP, EUR, and Bitcoin.
+- Currency conversion between various currencies including Nigerian naira, USD, GBP, EUR, and Bitcoin.
 - User-friendly interface with radio buttons for currency selection.
 - Option to round up the converted amount.
 
@@ -26,11 +27,11 @@ To use the Currency Converter app, follow these steps:
 - Click the "Convert" Image button to see the converted amount in the "Bottom text field".
 
 # Screenshots
-![2023-10-02 12-06-21 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/8cdd1afb-9333-4b03-a4c7-b9e42cf560b5)
-![2023-10-02 12-06-38 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/c1c9bfca-b716-4dce-9ddd-02d901948dbf)
-![2023-10-02 12-07-03 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/940e4996-3f3e-4066-8d95-8dc3575ba42b)
-![![2023-10-02 12-07-50 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/94209a31-9954-4642-a66d-872631c617f9)
-2023-10-02 12-07-09 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/76da178f-6ae6-40b3-9f86-2b8167c8d867)
+![2023-10-02 13-12-18 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/3239887d-cc9d-4d41-ba70-3ce68483f5ca)
+![2023-10-02 13-12-40 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/f8ec9661-6e9e-435a-8179-69fa7d93c938)
+![2023-10-02 13-12-56 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/411a97e0-0dc3-40fc-8ea0-f9663777cb22)
+![2023-10-02 13-13-02 High Res Screenshot](https://github.com/Chinazablossom/Currency_Converter/assets/107410128/45dec39e-2ae8-4f1f-a9ea-c5e491a17077)
+
 
 # Libraries and Dependencies
 The Currency Converter app uses the following libraries and dependencies:
