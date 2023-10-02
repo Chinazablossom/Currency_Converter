@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             image.setImageResource(R.drawable.chevron_down)
             binding.RG.setOnCheckedChangeListener { group, _ ->
                 when (group.checkedRadioButtonId) {
+                    R.id.rbNaira -> binding.Imgfrom.setImageResource(R.drawable.nairaimg)
                     R.id.rbUSD -> binding.Imgfrom.setImageResource(R.drawable.__icon__united_states_)
                     R.id.rbPounds -> binding.Imgfrom.setImageResource(R.drawable.united_kingdom__gb_)
                     R.id.rbEuro -> binding.Imgfrom.setImageResource(R.drawable.euro)
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity() {
 
             binding.RG2.setOnCheckedChangeListener { group, _ ->
                 when (group.checkedRadioButtonId) {
+                    R.id.rbNaira2 -> binding.Imgto.setImageResource(R.drawable.nairaimg)
                     R.id.rbUSD2 -> binding.Imgto.setImageResource(R.drawable.__icon__united_states_)
                     R.id.rbPounds2 -> binding.Imgto.setImageResource(R.drawable.united_kingdom__gb_)
                     R.id.rbEuro2 -> binding.Imgto.setImageResource(R.drawable.euro)
@@ -103,6 +105,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun convert() {
 
         val amountString = binding.ETfrom.text.toString()
@@ -122,6 +126,85 @@ class MainActivity : AppCompatActivity() {
             return
         }
         when {
+            binding.RG.checkedRadioButtonId == R.id.rbNaira && binding.RG2.checkedRadioButtonId == R.id.rbNaira2 -> {
+                values = BigDecimal.ONE
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
+
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance(Locale("en", "NG")).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en", "NG")).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
+            binding.RG.checkedRadioButtonId == R.id.rbNaira && binding.RG2.checkedRadioButtonId == R.id.rbUSD2 -> {
+                values = 0.0013.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
+
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance().format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance().format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+            }
+            binding.RG.checkedRadioButtonId == R.id.rbNaira && binding.RG2.checkedRadioButtonId == R.id.rbPounds2 -> {
+                values = 0.0011.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
+
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance(Locale.UK).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale.UK).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
+            binding.RG.checkedRadioButtonId == R.id.rbNaira && binding.RG2.checkedRadioButtonId == R.id.rbEuro2 -> {
+                values = 0.0012.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
+
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
+            binding.RG.checkedRadioButtonId == R.id.rbNaira && binding.RG2.checkedRadioButtonId == R.id.rbBitcoin2 -> {
+                values = 0.00000005.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
+
+                if (roundUp) {
+                    val roundedFormattedTip = "%s".format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = "%s".format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
+
             binding.RG.checkedRadioButtonId == R.id.rbUSD && binding.RG2.checkedRadioButtonId == R.id.rbUSD2 -> {
                 values = BigDecimal.ONE
                 val total = amount * values
@@ -138,7 +221,21 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+            binding.RG.checkedRadioButtonId == R.id.rbUSD && binding.RG2.checkedRadioButtonId == R.id.rbNaira2 -> {
+                values = 769.55.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
 
+                if (roundUp) {
+                    val roundedFormattedTip = NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
             binding.RG.checkedRadioButtonId == R.id.rbUSD && binding.RG2.checkedRadioButtonId == R.id.rbPounds2 -> {
                 values = 0.82.toBigDecimal()
                 val total = amount * values
@@ -155,7 +252,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbUSD && binding.RG2.checkedRadioButtonId == R.id.rbEuro2 -> {
                 values = 0.95.toBigDecimal()
                 val total = amount * values
@@ -163,16 +259,15 @@ class MainActivity : AppCompatActivity() {
 
                 if (roundUp) {
                     val roundedFormattedTip =
-                        NumberFormat.getCurrencyInstance(Locale.UK).format(total.roundUp())
+                        NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total.roundUp())
                     binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
 
                 } else {
-                    val formattedTip = NumberFormat.getCurrencyInstance(Locale.UK).format(total)
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total)
                     binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbUSD && binding.RG2.checkedRadioButtonId == R.id.rbBitcoin2 -> {
                 values = 0.000036.toBigDecimal()
                 val total = amount * values
@@ -205,7 +300,22 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+            binding.RG.checkedRadioButtonId == R.id.rbPounds && binding.RG2.checkedRadioButtonId == R.id.rbNaira2 -> {
+                values = 935.31.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
 
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
             binding.RG.checkedRadioButtonId == R.id.rbPounds && binding.RG2.checkedRadioButtonId == R.id.rbUSD2 -> {
                 values = 1.22.toBigDecimal()
                 val total = amount * values
@@ -222,7 +332,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbPounds && binding.RG2.checkedRadioButtonId == R.id.rbEuro2 -> {
                 values = 1.15.toBigDecimal()
                 val total = amount * values
@@ -230,16 +339,15 @@ class MainActivity : AppCompatActivity() {
 
                 if (roundUp) {
                     val roundedFormattedTip =
-                        NumberFormat.getCurrencyInstance(Locale.UK).format(total.roundUp())
+                        NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total.roundUp())
                     binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
 
                 } else {
-                    val formattedTip = NumberFormat.getCurrencyInstance(Locale.UK).format(total)
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total)
                     binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbPounds && binding.RG2.checkedRadioButtonId == R.id.rbBitcoin2 -> {
                 values = 0.000044.toBigDecimal()
                 val total = amount * values
@@ -263,16 +371,31 @@ class MainActivity : AppCompatActivity() {
 
                 if (roundUp) {
                     val roundedFormattedTip =
-                        NumberFormat.getCurrencyInstance(Locale.UK).format(total.roundUp())
+                        NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total.roundUp())
                     binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
 
                 } else {
-                    val formattedTip = NumberFormat.getCurrencyInstance(Locale.UK).format(total)
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total)
                     binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
                 }
 
             }
+            binding.RG.checkedRadioButtonId == R.id.rbEuro && binding.RG2.checkedRadioButtonId == R.id.rbNaira2 -> {
+                values = 810.91.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
 
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
             binding.RG.checkedRadioButtonId == R.id.rbEuro && binding.RG2.checkedRadioButtonId == R.id.rbUSD2 -> {
                 values = 1.06.toBigDecimal()
                 val total = amount * values
@@ -289,7 +412,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbEuro && binding.RG2.checkedRadioButtonId == R.id.rbPounds2 -> {
                 values = 0.87.toBigDecimal()
                 val total = amount * values
@@ -306,7 +428,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbEuro && binding.RG2.checkedRadioButtonId == R.id.rbBitcoin2 -> {
                 values = 0.000038.toBigDecimal()
                 val total = amount * values
@@ -338,7 +459,22 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+            binding.RG.checkedRadioButtonId == R.id.rbBitcoin && binding.RG2.checkedRadioButtonId == R.id.rbNaira2 -> {
+                values = 21823976.27.toBigDecimal()
+                val total = amount * values
+                val roundUp = binding.switchMaterial.isChecked
 
+                if (roundUp) {
+                    val roundedFormattedTip =
+                        NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total.roundUp())
+                    binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
+
+                } else {
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en","NG")).format(total)
+                    binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
+                }
+
+            }
             binding.RG.checkedRadioButtonId == R.id.rbBitcoin && binding.RG2.checkedRadioButtonId == R.id.rbUSD2 -> {
                 values = 28015.10.toBigDecimal()
                 val total = amount * values
@@ -355,7 +491,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbBitcoin && binding.RG2.checkedRadioButtonId == R.id.rbPounds2 -> {
                 values = 22966.44.toBigDecimal()
                 val total = amount * values
@@ -372,7 +507,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
             binding.RG.checkedRadioButtonId == R.id.rbBitcoin && binding.RG2.checkedRadioButtonId == R.id.rbEuro2 -> {
                 values = 26487.06.toBigDecimal()
                 val total = amount * values
@@ -380,11 +514,11 @@ class MainActivity : AppCompatActivity() {
 
                 if (roundUp) {
                     val roundedFormattedTip =
-                        NumberFormat.getCurrencyInstance(Locale.UK).format(total.roundUp())
+                        NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total.roundUp())
                     binding.resultTxt.text = getString(R.string.resultStr, roundedFormattedTip)
 
                 } else {
-                    val formattedTip = NumberFormat.getCurrencyInstance(Locale.UK).format(total)
+                    val formattedTip = NumberFormat.getCurrencyInstance(Locale("en", "EU")).format(total)
                     binding.resultTxt.text = getString(R.string.resultStr, formattedTip)
                 }
 

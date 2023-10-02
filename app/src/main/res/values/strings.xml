@@ -6,6 +6,7 @@
     <string name="Usd">United States Dollars</string>
     <string name="PoundSterling">Pound Sterling</string>
     <string name="Euro">Euro</string>
+    <string name="naira">Naira</string>
     <string name="btc">Bitcoin</string>
     <string name="rUp">Round Up</string>
 </resources>

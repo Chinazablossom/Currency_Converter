@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/__icon__united_states_" />
+                    android:src="@drawable/nairaimg" />
             </androidx.cardview.widget.CardView>
 
 
@@ -93,12 +93,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TLfrom">
+                <RadioButton
+                    android:id="@+id/rbNaira"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/naira"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/rbUSD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
                     android:text="@string/Usd"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
@@ -159,7 +166,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/__icon__united_states_" />
+                    android:src="@drawable/nairaimg" />
             </androidx.cardview.widget.CardView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -216,10 +223,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/greyfield">
 
                 <RadioButton
-                    android:id="@+id/rbUSD2"
+                    android:id="@+id/rbNaira2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
+                    android:text="@string/naira"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbUSD2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/Usd"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
